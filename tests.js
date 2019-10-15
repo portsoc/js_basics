@@ -149,6 +149,10 @@ QUnit.test("compare",
             compare([1, 2, 3], [1, 4, 3]),
             "return false because more than just the first or last index should be compared."
         );
+        
+        assert.notOk(
+          compare([4], [4, 7, 11, 17])
+        );
     }
 );
 
@@ -186,7 +190,7 @@ QUnit.test("divisors",
 
         assert.ok(
             compare( divisors([1, 2, 3, 4, 5, 6, 7, 8, 9], 3), [3, 6, 9] ),
-            "Given an array [1,2, ..., 9] and a second parameter of 2, the result should be [2,4]."
+            "Given an array [1,2, ..., 9] and a second parameter of 3, the result should be [3,4]."
         );
 
     }
